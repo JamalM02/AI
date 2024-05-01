@@ -5,11 +5,11 @@ import math
 
 def integrate(f, a, b, n=1000):
     delta_x = (b - a) / n
-    sum = 0
+    integral = 0
     for i in range(n):
         x_i = a + i * delta_x
-        sum += f(x_i)
-    return sum * delta_x
+        integral += f(x_i) * delta_x
+    return integral
 
 
 #f1(x)=x**3
@@ -27,9 +27,7 @@ a = 0
 b = 2
 
 #Intgration for f1
-result_f1 = integrate(f1, a, b)
-print("Integral of f1(x) between", a, "and", b, ":", result_f1)
+print("Integral of f1(x) between", a, "and", b, ":", integrate(f1, a, b))
 
 #intgration for f2
-result_f2 = integrate(f2, a, b)
-print("Integral of f2(x) between", a, "and", b, ":", result_f2)
+print("Integral of f2(x) between", a, "and", b, ":", integrate(f2, a, b))
