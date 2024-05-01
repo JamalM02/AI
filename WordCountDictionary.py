@@ -11,29 +11,39 @@ class Dictionary:
         self.count += 1
 
 
-#Function to calculate the amount of: Lines, Words and Charactares in file
+#Function to calculate the amount of: Lines, Words(counts once each word) and Charactares in file by creating
+# new objects from Dictionary type and store those objects in a list for farther use
 def word_count(file):
     lines_count = 0
     words_count = 0
+    wordslist = list()
     characters_count = 0
-    with open(file) as f:
+    with open(file, 'r') as f:
         for line in f:
             lines_count += 1
             line = line.strip()
             line = line.split()
             for word in line:
                 if word.isalpha():
+                    found = False
+                    for item in wordslist:
+                        if item.word == word:
+                            found = True
+                            break
+                    if not found:
+                        new_word = Dictionary(word)
+                        wordslist.append(new_word)
                     characters_count += len(word)
-                    words_count += 1
-    print("\tThere are:\n", lines_count, "Lines\n", words_count, "Words\n", characters_count
+    print("\tThere are:\n", lines_count, "Lines\n", len(wordslist), "Words\n", characters_count
           , "Characters\n in file", file)
+    return wordslist
 
 
 #Function that creat new objects from Dictionary type and store those objects in a list for farther use
 def word_frequency(file):
     words_count = 0
     wordslist = list()
-    with open(file) as f:
+    with open(file, 'r') as f:
         for line in f:
             line = line.strip()
             line = line.split()
