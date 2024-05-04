@@ -1,27 +1,27 @@
-#Q3
+# Q3
 
 names = ['Alice', 'Bob', 'Cathy', 'Dan', 'Ed', 'Frank', 'Gary', 'Helen',
          'Irene', 'Jack', 'Kelly', 'Larry']
 ages = [20, 21, 18, 18, 19, 20, 20, 19, 19, 19, 22, 19]
 
 
-#Crating class for storing name and age for each person
-class dictionary:
+# Crating class for storing name and age for each person
+class Dictionary:
     def __init__(self, d_name, d_age):
         self.d_age = d_age
         self.d_name = d_name
 
 
-#Creating combined list by the two lists
+# Creating combined list by the two lists
 def combine_lists(c_name, c_age):
     people_list1 = list()
     for i in range(len(c_name)):
-        person = dictionary(c_name[i], c_age[i])
+        person = Dictionary(c_name[i], c_age[i])
         people_list1.append(person)
     return people_list1
 
 
-#Finding people with the same age in the list and printing their names
+# Finding people with the same age in the list and printing their names
 def people(p_age):
     p_list = combine_lists(names, ages)
     age_list = list()
@@ -31,7 +31,7 @@ def people(p_age):
     return age_list
 
 
-#testing
+# testing
 print('is Dan and Cathy are 18 years old?')
 print('Dan' in people(18) and 'Cathy' in people(18))
 print('is Ed, Helen, Irene, Jack and Larry are 19 years old?')

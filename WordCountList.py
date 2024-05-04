@@ -1,9 +1,9 @@
-#Q4
-#Jamal Majadle 207513722
+# Q4
+# Jamal Majadle 207513722
 import re
 
 
-#Function to calculate the amount of: Lines, Words(counts once each word) and Charactares in file
+# Function to calculate the amount of: Lines, Words(counts once each word) and Characters in file
 def word_count(file):
     lines_count = 0
     wordslist = list()
@@ -27,7 +27,7 @@ def word_count(file):
           , "Characters\n in file", file)
 
 
-#Function that creat new objects from Dictionary type and store those objects in a list for farther use
+# Function that creat new objects from Dictionary type and store those objects in a list for farther use
 def word_frequency(file):
     words_count = 0
     wordslist = list()
@@ -47,7 +47,7 @@ def word_frequency(file):
     return wordslist
 
 
-#Function to calculate and print recived list for Top X count words
+# Function to calculate and print received list for Top X count words
 def top_words(topWords):
     top_count = 0
     sorted_word_counts = sorted(word_frequency("oliver_twist.txt"), key=lambda x: x['count'], reverse=True)
@@ -56,7 +56,7 @@ def top_words(topWords):
         print(sorted_word_counts[words])
 
 
-#Function to calculate and print recived list for the number of words that appeared more than X times
+# Function to calculate and print received list for the number of words that appeared more than X times
 def top_counts(top_count):
     num_of_words = 0
     sorted_word_counts = sorted(word_frequency("oliver_twist.txt"), key=lambda x: x['count'], reverse=True)
@@ -66,7 +66,7 @@ def top_counts(top_count):
     print("\n\tnumber of words which appeared more than", top_count, "times is:", num_of_words)
 
 
-#tests
+# tests
 word_count("oliver_twist.txt")
 top_words(3)
 top_counts(1000)
